@@ -1,8 +1,20 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    d = {}
+    result = []
+
+    # create a dictionary for the list of lists
+    for a in arrays:
+        for i in a:
+            # for all numbers in the array, add to dictionary
+            if i not in d:
+                d[i] = 0
+            d[i] += 1
+
+    # if number shows up as many times as len(arrays)
+    for k, v in d.items():
+        if v == len(arrays):
+            # append it to the results
+            result.append(k)
 
     return result
 
